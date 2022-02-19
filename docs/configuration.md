@@ -1,8 +1,16 @@
-# BUILD GUIDE #
+# CONFIGURATION GUIDE #
 
-Documentation on how to build the project. Please make sure to read **BEFORE YOU START** section on [readme.md](./../readme.md "readme.md")
+The app configuration guide and how to integrate the library
 
-### BUILD STEPS (WINDOWS) ###
+- - - -
+#### RobotOptions ####
+
+This object represents the capabilities of the Robot and its environment. Below are the properties.
+
+Name  | Description | Type
+------------- | ------------- | -------------
+BlockedCells  | Content Cell  |
+Content Cell  | Content Cell
 
 1. execute **build.sh**. it will generate a dist folder.
 2. navigate to dist folder, you will notice 2 folder.
