@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelstraPurple.Robot", "TelstraPurple.Robot\TelstraPurple.Robot.csproj", "{F67B4848-186E-46C2-8E6D-8D6BD0BDA70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelstraPurple.Robot.Test", "TelstraPurple.Robot.Test\TelstraPurple.Robot.Test.csproj", "{33E32769-2273-49BB-91B6-EC98FFE22685}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F67B4848-186E-46C2-8E6D-8D6BD0BDA70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F67B4848-186E-46C2-8E6D-8D6BD0BDA70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F67B4848-186E-46C2-8E6D-8D6BD0BDA70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F67B4848-186E-46C2-8E6D-8D6BD0BDA70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E32769-2273-49BB-91B6-EC98FFE22685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E32769-2273-49BB-91B6-EC98FFE22685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E32769-2273-49BB-91B6-EC98FFE22685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E32769-2273-49BB-91B6-EC98FFE22685}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29D26431-CEFB-452A-A043-D013E16B2576}
+	EndGlobalSection
+EndGlobal

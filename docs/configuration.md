@@ -3,32 +3,29 @@
 The app configuration guide and how to integrate the library
 
 - - - -
+
+#### Robot Commands ####
+
+Command | Description
+PLACE   | Moves the robot in the exact cell address given. If direction is given then the robot will face that direct. Default direction is NORTH.
+MOVE    | Moves the robot cell by 1 based on what direction
+LEFT \| RIGHT | Rotates the robots 90 degree.
+REPORT  | Robot will broadcast a report of its position.
+
+
+- - - -
+
 #### [RobotOptions.cs](./../src/TelstraPurple.Robot/RobotOptions.cs "RobotOptions.cs") ####
 
 This object represents the capabilities of the Robot and its environment. Below are the properties.
 
 Name  | Description | Type
 ------------- | ------------- | -------------
-BlockedCells  | Content Cell  |
-Content Cell  | Content Cell
-
-1. execute **build.sh**. it will generate a dist folder.
-2. navigate to dist folder, you will notice 2 folder.
-3. select between **ConsoleSample** and **ConsoleFactorySample**
-3. execute the **.exe** file
-4. view [Configuration.md](/docs/configuration.md "Configuration.md") on how to use the app.
-
-### BUILD STEPS (LINUX) ###
-*Please note that this is only tested on WSL2*
-
-1. execute **build-linux.sh**. it will generate a dist folder.
-2. navigate to dist folder, you will notice 2 folder.
-3. select between **ConsoleSample** and **ConsoleFactorySample**
-3. execute the *appname*
-4. view [Configuration.md](/docs/configuration.md "Configuration.md") on how to use the app.
+BlockedCells  | Contains all the blocked cell addresses the robot can't pass on.  |  ImmutableList<int[]>
+TableTopSize  | The size of the table top. | ImmutableDictionary<string, int>
+Reporter      | A delegate method that the robot invokes when reporting. | Action<string, object[]>
 
 
-**NOTE**: docker support soon
 
 
 
