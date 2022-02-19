@@ -3,7 +3,7 @@
 The app configuration guide and how to integrate the library
 
 - - - -
-#### RobotOptions ####
+#### [RobotOptions.cs](./../src/TelstraPurple.Robot/RobotOptions.cs "RobotOptions.cs") ####
 
 This object represents the capabilities of the Robot and its environment. Below are the properties.
 
