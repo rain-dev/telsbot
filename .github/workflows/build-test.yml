@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ./src/TelstraPurlple.sln
+      run: dotnet restore ./src/TelstraPurple.sln
     - name: Build
-      run: dotnet build --no-restore -c Release ./src/TeslstraPurlple.sln
+      run: dotnet build --no-restore -c Release ./src/TelstraPurple.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal ./src/TelstraPurple.Robot.Test/TelstraPurple.Robot.Test.csproj
