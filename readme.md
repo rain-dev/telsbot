@@ -1,6 +1,9 @@
 # TELSBOT #
 
 A small library design to control a bot that moves in a 2 dimensional space.
+
+[![telsbot-build-test](https://github.com/rainier-dev-88/telsbot/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/rainier-dev-88/telsbot/actions/workflows/build-test.yml)
+
 - - - -
 #### BEFORE YOU START ####
 * Download and install [.NET6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0 ".NET6 SDK").
