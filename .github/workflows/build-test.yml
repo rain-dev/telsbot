@@ -42,12 +42,18 @@ jobs:
       run: |
         dotnet build ./sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleSample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
         dotnet build ./sample/TelstraPurple.ConsoleFactorySample/TelstraPurple.ConsoleFactorySample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
-    - uses: montudor/action-zip@v1
+    - name: zip relase sample factory
+      uses: thedoctor0/zip-release@master
       with:
-        args: zip -qq -r TelstraPurple.ConsoleSample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
-    - uses: montudor/action-zip@v1
+        type: 'zip'
+        filename: TelstraPurple.ConsoleSample-${{ matrix.os }}.zip
+        directory: ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
+    - name: zip relase factory sample
+      uses: thedoctor0/zip-release@master
       with:
-        args: zip -qq -r TelstraPurple.ConsoleFactorySample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
+        type: 'zip'
+        filename: TelstraPurple.ConsoleFactorySample-${{ matrix.os }}.zip
+        directory: ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
     - uses: actions/upload-artifact@v2.3.1
       with:
         path: TelstraPurple.ConsoleSample-${{ matrix.os }}.zip
