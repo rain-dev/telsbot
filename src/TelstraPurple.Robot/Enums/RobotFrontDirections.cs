@@ -10,11 +10,6 @@
         SOUTH = 1,
         EAST = 2,
         WEST = 3,
-        // Z MOVEMENT
-        NORTHWEST = NORTH | WEST,
-        NORTHEAST = NORTH | EAST,
-        SOUTHWEST = SOUTH | WEST,
-        SOUTHEAST = SOUTH | EAST,
 
     }
 }

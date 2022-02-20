@@ -10,11 +10,6 @@ namespace TelstraPurple.Robot
 
         #region Public Methods 
 
-        public string ShowInstruction()
-        {
-            return String.Empty;
-        }
-
         /// <summary>
         ///    execute command to be parsed by the robot.
         ///    format: (MOVE|LEFT|RIGHT|PLACE|REPORT) [0-9]{1,2},[0-9]{1,2},(NORTH|SOUTH|WEST|EAST)
@@ -83,11 +78,12 @@ namespace TelstraPurple.Robot
 
         #region Protected Properties
 
-        public RobotState State { get; set; } = new();
+        public RobotState? State { get; set; } = new();
 
         #endregion
 
         #region Protected Methods 
+
         /// <summary>
         ///   sends a command by the given cell and direction.
         /// </summary>
