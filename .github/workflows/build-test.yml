@@ -48,7 +48,6 @@ jobs:
     - uses: montudor/action-zip@v1
       with:
         args: zip -qq -r TelstraPurple.ConsoleFactorySample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
-    - name: Upload a Build Artifact
     - uses: actions/upload-artifact@v2.3.1
       with:
         path: TelstraPurple.ConsoleSample-${{ matrix.os }}.zip
