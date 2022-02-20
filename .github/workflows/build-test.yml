@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-
+    name: test telsbot
     runs-on: ubuntu-latest
 
     steps:
@@ -23,7 +23,36 @@ jobs:
       run: dotnet build --no-restore ./src/TelstraPurple.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal ./src/TelstraPurple.Robot.Test/TelstraPurple.Robot.Test.csproj
-  # build:
-  #   needs: test
-
-  #   runs-on
+  build:
+    name: build telsbot on ${{ matrix.os }}
+    needs: test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps: 
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore ./sample/TelstraPurple.sln
+    - name: Build artifacts
+      run: |
+        dotnet build ./Sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleSample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
+        dotnet build ./Sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleFactorySample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r TelstraPurple.ConsoleSample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
+    - uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r TelstraPurple.ConsoleFactorySample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
+    - name: Upload a Build Artifact
+    - uses: actions/upload-artifact@v2.3.1
+      with:
+        path: TelstraPurple.ConsoleSample-${{ matrix.os }}.zip
+    - uses: actions/upload-artifact@v2.3.1
+      with:
+        path: TelstraPurple.ConsoleFactorySample-${{ matrix.os }}.zip
+    
