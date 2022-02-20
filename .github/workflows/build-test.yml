@@ -41,8 +41,8 @@ jobs:
     - name: Build artifacts
       run: |
         ls
-        dotnet build ./Sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleSample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
-        dotnet build ./Sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleFactorySample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
+        dotnet build ./sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleSample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
+        dotnet build ./sample/TelstraPurple.ConsoleSample/TelstraPurple.ConsoleFactorySample.csproj -c Release -o ./dist/${{ matrix.os }}/TelstraPurple.ConsoleFactorySample
     - uses: montudor/action-zip@v1
       with:
         args: zip -qq -r TelstraPurple.ConsoleSample-${{ matrix.os }}.zip ./dist/${{ matrix.os }}/TelstraPurple.ConsoleSample
